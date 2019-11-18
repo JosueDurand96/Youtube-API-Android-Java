@@ -25,5 +25,19 @@ class MainActivity : YouTubeBaseActivity() {
     }
 
 
+    private fun initUI() {
+        youtubePlayerInit = object : YouTubePlayer.OnInitializedListener {
+            override fun onInitializationSuccess(p0: YouTubePlayer.Provider?, youtubePlayer: YouTubePlayer?, p2: Boolean) {
+                youtubePlayer?.loadVideo(VIDEO_ID)
+            }
 
+            override fun onInitializationFailure(p0: YouTubePlayer.Provider?, p1: YouTubeInitializationResult?) {
+                Toast.makeText(applicationContext, "Something went wrong !! ", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        btnPlay.setOnClickListener(View.OnClickListener { v ->
+            youtubePlayer.initialize(YOUTUBE_API_KEY, youtubePlayerInit)
+        })
+    }
 }
