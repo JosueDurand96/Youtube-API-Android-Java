@@ -1,8 +1,6 @@
 package com.example.kotlinyoutubeproject
 
-
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
 import com.google.android.youtube.player.YouTubeBaseActivity
 import com.google.android.youtube.player.YouTubeInitializationResult
@@ -12,8 +10,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : YouTubeBaseActivity() {
 
     companion object {
-        val VIDEO_ID: String = "YqggV_wGhM0";
-        val YOUTUBE_API_KEY: String = "AIzaSyAGYLzqvpEt3RECmwamycY217516f6frug"
+        val VIDEO_ID: String = "YqggV_wGhM0"
+        val YOUTUBE_API_KEY: String = "AIzaSyAL6vnzR3AqruWo9S4WKQ4ccJJ0koRpErQ"
     }
 
     lateinit var youtubePlayerInit: YouTubePlayer.OnInitializedListener
@@ -36,8 +34,8 @@ class MainActivity : YouTubeBaseActivity() {
             }
         }
 
-        btnPlay.setOnClickListener(View.OnClickListener { v ->
+        btnPlay.setOnClickListener { v ->
             youtubePlayer.initialize(YOUTUBE_API_KEY, youtubePlayerInit)
-        })
+        }
     }
 }
