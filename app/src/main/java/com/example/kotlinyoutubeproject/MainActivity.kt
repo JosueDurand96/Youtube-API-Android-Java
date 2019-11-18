@@ -10,7 +10,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : YouTubeBaseActivity() {
 
     companion object {
-        val VIDEO_ID: String = "YqggV_wGhM0"
+        val VIDEO_ID: String = "Khy4ZmU7Ru4"
         val YOUTUBE_API_KEY: String = "AIzaSyAL6vnzR3AqruWo9S4WKQ4ccJJ0koRpErQ"
     }
 
@@ -25,12 +25,20 @@ class MainActivity : YouTubeBaseActivity() {
 
     private fun initUI() {
         youtubePlayerInit = object : YouTubePlayer.OnInitializedListener {
-            override fun onInitializationSuccess(p0: YouTubePlayer.Provider?, youtubePlayer: YouTubePlayer?, p2: Boolean) {
+            override fun onInitializationSuccess(
+                p0: YouTubePlayer.Provider?,
+                youtubePlayer: YouTubePlayer?,
+                p2: Boolean
+            ) {
                 youtubePlayer?.loadVideo(VIDEO_ID)
             }
 
-            override fun onInitializationFailure(p0: YouTubePlayer.Provider?, p1: YouTubeInitializationResult?) {
-                Toast.makeText(applicationContext, "Something went wrong !! ", Toast.LENGTH_SHORT).show()
+            override fun onInitializationFailure(
+                p0: YouTubePlayer.Provider?,
+                p1: YouTubeInitializationResult?
+            ) {
+                Toast.makeText(applicationContext, "Something went wrong !! ", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
 
