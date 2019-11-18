@@ -1,3 +1,1 @@
 include ':app'
-rootProject.name='Kotlin youtube project'
-include ':youTubeAndroidAPIDemo'
